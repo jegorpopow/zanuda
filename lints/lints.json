@@ -229,5 +229,16 @@
       "is_multi_part_suggestion": false,
       "applicability": "Unresolved"
     }
+  },
+  {
+    "id": "forbid_many_nested_if_expressions",
+    "group": "correctness",
+    "level": "deny",
+    "impl": "typed",
+    "docs": "### What it does\n\nCheck too many (>= 3 levels) nested if expressions, for example\n* `if ... then (if ... then (if ... then (if ... then ... else ...) else ...) else ...) else ...`\n\n### Why it is important\n\nThe big problem with nested conditions is that they confuse the control flow of the code:\nthey make it almost impossible to determine what code will be executed and when.\n\nAdopted from camelot's lint list.",
+    "applicability": {
+      "is_multi_part_suggestion": false,
+      "applicability": "Unresolved"
+    }
   }
 ]
