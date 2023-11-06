@@ -66,6 +66,17 @@
     }
   },
   {
+    "id": "ambiguous_constructors",
+    "group": "nursery",
+    "level": "warn",
+    "impl": "typed",
+    "docs": "### What it does\n\nChecks if there are constructor names that hide default constructor names\nfrom `Stdlib`, such as `Some`, `None`, `Error`, `Ok`. \n\n### Why it is important\n\nShadowing names of default constructors may lead to name clashes within toplevel.\nUsing custom constructors is recommended.",
+    "applicability": {
+      "is_multi_part_suggestion": false,
+      "applicability": "Unresolved"
+    }
+  },
+  {
     "id": "exc_error_swallowing",
     "group": "suspicious",
     "level": "deny",
