@@ -99,6 +99,17 @@
     }
   },
   {
+    "id": "physical_equality",
+    "group": "correctness",
+    "level": "deny",
+    "impl": "typed",
+    "docs": "### What it does\nWarns about using of physical equality (of pointers) vs. structural equality (of values)\n\n### Why is is important?\nThe newcomers from C++ and C# may automatically write == to test for equality, \nand get unexpected results for complex values.\n\nIf you do low level performance hacking, this lint could give false positives.",
+    "applicability": {
+      "is_multi_part_suggestion": false,
+      "applicability": "Unresolved"
+    }
+  },
+  {
     "id": "exc_failwith",
     "group": "suspicious",
     "level": "warn",
