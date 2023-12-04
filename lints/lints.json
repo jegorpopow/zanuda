@@ -147,7 +147,7 @@
     "group": "correctness",
     "level": "deny",
     "impl": "typed",
-    "docs": "### What it does\nUsing mutable data structures for teaching purposes is usually discouraged. Replace \\\nHashtables by standart tree-like maps or consider Hash-Array Mapped Tries (HAMT).\n\n##### How to fix?\nUse mutable `ref`erences and mutable structure fields only if it is really required. Usually, mutability is added for performance reasons. For example,\n\n  * [Effective generalization](https://okmij.org/ftp/ML/generalization.html) in OCaml type checher\n  * Functions, that count number of invocations and/or generate unique names.\n  * Implementing memoization or laziness",
+    "docs": "### What it does\nUsing mutable data structures for teaching purposes is usually discouraged. Replace \\\nHashtables by standard tree-like maps or consider Hash-Array Mapped Tries (HAMT).\n\n##### How to fix?\nUse mutable `ref`erences and mutable structure fields only if it is really required. Usually, mutability is added for performance reasons. For example,\n\n  * [Effective generalization](https://okmij.org/ftp/ML/generalization.html) in OCaml type checher\n  * Functions, that count number of invocations and/or generate unique names.\n  * Implementing memoization or laziness",
     "applicability": {
       "is_multi_part_suggestion": false,
       "applicability": "Unresolved"
@@ -169,7 +169,7 @@
     "group": "correctness",
     "level": "deny",
     "impl": "typed",
-    "docs": "### What it does\nThe function `Stdlib.List.length` evaluated length of standart OCaml linked lists (`'a list`). There return values supposed to be non-negative, so all code like `List.length .. <= 0` smells bad. If they need to check that list is empty it is more recommended to use pattern matching instead of calculating length, because for large list we will do full iteration, and it will not be too efficient.",
+    "docs": "### What it does\nThe function `Stdlib.List.length` evaluated length of standard OCaml linked lists (`'a list`). There return values supposed to be non-negative, so all code like `List.length .. <= 0` smells bad. If they need to check that list is empty it is more recommended to use pattern matching instead of calculating length, because for large list we will do full iteration, and it will not be too efficient.",
     "applicability": {
       "is_multi_part_suggestion": false,
       "applicability": "Unresolved"
