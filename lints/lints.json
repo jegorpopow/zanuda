@@ -11,6 +11,28 @@
     }
   },
   {
+    "id": "manual_fold",
+    "group": "correctness",
+    "level": "deny",
+    "impl": "untyped",
+    "docs": "### What it does\nProposes to use `List.fold_left` or `List.fold_right` instead of manual \nimplementations, such as:\n\n```ocaml\n  let rec fold_left f acc l = match l with\n  | [] -> acc\n  | x :: xs -> fold_left f (f acc a) l\n```\n\n### Why?\nIt is too verbose and reduces readability.",
+    "applicability": {
+      "is_multi_part_suggestion": false,
+      "applicability": "Unresolved"
+    }
+  },
+  {
+    "id": "manual_map",
+    "group": "correctness",
+    "level": "deny",
+    "impl": "untyped",
+    "docs": "### What it does\nProposes to use `List.map` instead of manual implementation, such as\n\n```ocaml\n  let rec map f = function\n  | [] -> []\n  | x :: xs -> f x :: map f xs\n```\n\n### Why?\nIt is too verbose and most likely less performant.",
+    "applicability": {
+      "is_multi_part_suggestion": false,
+      "applicability": "Unresolved"
+    }
+  },
+  {
     "id": "no_docs_parsetree",
     "group": "correctness",
     "level": "deny",
