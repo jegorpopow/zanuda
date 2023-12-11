@@ -224,7 +224,7 @@
     "group": "suspicious",
     "level": "warn",
     "impl": "typed",
-    "docs": "### What it does\nSimplyfies record construction using OCaml-specfic field punning.\n\n(Chapter)[https://dev.realworldocaml.org/records.html] in 'Real World OCaml'.\n\n##### Examples\n\n```ocaml\n{ x = r.x; y = r.y; z = 15}\n```\nvs\n```ocaml\n{ r with z = 15 }\n```",
+    "docs": "### What it does\nSimplyfies record construction using OCaml-specfic field punning.\n\n[Chapter](https://dev.realworldocaml.org/records.html) in 'Real World OCaml'.\n\n##### Examples\n\n```ocaml\n{ x = r.x; y = r.y; z = 15}\n```\nvs\n```ocaml\n{ r with z = 15 }\n```",
     "applicability": {
       "is_multi_part_suggestion": false,
       "applicability": "Unresolved"
