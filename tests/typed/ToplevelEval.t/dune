@@ -1,8 +1,10 @@
 (library
  (name test_toplevel_eval)
  (libraries base)
+ ; (flags
+ ;  (:standard -dsource))
  (preprocessor_deps anonymous.rb)
  (preprocess
-  (pps ppx_blob ppx_optcomp))
+  (pps ppx_blob ppx_optcomp ppx_expect))
  (modules test_toplevel_eval)
  (wrapped false))

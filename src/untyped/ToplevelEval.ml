@@ -62,14 +62,21 @@ let run { Compile_common.source_file; _ } (fallback : Ast_iterator.iterator) =
         | _ -> ())
   ; expr =
       (fun self e ->
-        fallback.expr self e;
+        print_endline "HERR";
+        Format.printf "%a\n%!" (Printast.expression 2) e;
         match e.pexp_desc with
+        | Pexp_extension ({ txt = "if" }, PStr [ _ ]) ->
+          print_endline "FUCK";
+          ()
         | Pexp_extension (_, PStr [ { pstr_desc = Pstr_eval (ein, _) } ]) ->
           self.expr self ein
-        | _ -> ())
+        | _ -> fallback.expr self e)
   ; attribute =
       (fun _ attr ->
         (* we don't check inside attributes *)
         fallback.attribute fallback attr)
+  ; extension =
+      (fun self (({ txt = name }, payload) as ext) ->
+        if String.equal name "if" then fallback.extension self ext)
   }
 ;;
