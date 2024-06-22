@@ -38,12 +38,12 @@ end = struct
          ; "location", location filename ~line ~col:1
          ; "severity", `String "INFO"
          ]
-        @
-        match code with
-        | None -> []
-        | Some (desc, None) -> [ "code", `Assoc [ "value", `String desc ] ]
-        | Some (desc, Some url) ->
-          [ "code", `Assoc [ "value", `String desc; "url", `String url ] ])
+         @
+         match code with
+         | None -> []
+         | Some (desc, None) -> [ "code", `Assoc [ "value", `String desc ] ]
+         | Some (desc, Some url) ->
+           [ "code", `Assoc [ "value", `String desc; "url", `String url ] ])
     in
     fprintf ppf "%s\n%!" (Yojson.to_string j)
   ;;
